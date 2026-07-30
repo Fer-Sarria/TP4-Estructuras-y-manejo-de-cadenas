@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "TP4-Estructuras-y-manejo-de-cadenas": {
+      "commandName": "Project"
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker"
+    }
+  }
+}
