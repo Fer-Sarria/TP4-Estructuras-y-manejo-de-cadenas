@@ -296,7 +296,37 @@ namespace TP4_Estructuras_y_manejo_de_cadenas
             // día ingresado no es un día hábil”. Importante: Tome los recaudos necesarios para
             // asegurar el funcionamiento del algoritmo ya que un usuario puede ingresar LUNES,
             // lunes, Lunes, luneS, LuNeS, LUnES, etc.
+            static void EjecutarEjercicio8()
+            {
+                Console.Clear();
+                Console.WriteLine("Ingrese un día de la semana");
+                string entrada = Console.ReadLine();
 
+                // Convertimos a minúsculas para cumplir con el requisito del enunciado
+                string dia = entrada.ToLower().Trim();
+
+                switch (dia)
+                {
+                    case "lunes":
+                    case "martes":
+                    case "miércoles":
+                    case "miercoles":
+                    case "jueves":
+                    case "viernes":
+                        Console.WriteLine($"\nEl día ingresado es {dia}");
+                        break;
+                    case "sábado":
+                    case "sabado":
+                    case "domingo":
+                        Console.WriteLine("\nEl día ingresado no es un día hábil");
+                        break;
+                    default:
+                        Console.WriteLine("\nEl texto ingresado no corresponde a un día de la semana válido");
+                        break;
+                }
+
+                Console.ReadKey();
+            }
 
         }
     }
