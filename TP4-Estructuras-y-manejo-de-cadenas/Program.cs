@@ -16,6 +16,7 @@ namespace TP4_Estructuras_y_manejo_de_cadenas
                 Console.WriteLine("1. Salario y horas extras de operario");
                 Console.WriteLine("2. Cálculo de compra de lápices");
                 Console.WriteLine("3. Determinar el mayor de 3 números");
+                Console.WriteLine("4. Operación Condicional (Resta o Suma)");
                 Console.WriteLine("0. Salir");
                 Console.WriteLine("=======================================");
                 Console.Write("Seleccione una opción: ");
