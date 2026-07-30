@@ -78,31 +78,38 @@ namespace TP4_Estructuras_y_manejo_de_cadenas
         static void EjecutarEjercicio2()
         {
             Console.Clear();
-            Console.WriteLine("--- EJERCICIO 2: Compra de Lápices ---");
-            Console.Write("Ingrese la cantidad de lápices comprados: ");
+
+            // 1. Mensaje de entrada igual al PDF (con salto de línea para el número)
+            Console.WriteLine("Ingrese la cantidad de lapices comprados");
             int cantidad = Convert.ToInt32(Console.ReadLine());
 
             double costoPorLapiz = 2.50;
             double costoBase = cantidad * costoPorLapiz;
             double descuento = 0;
 
+            // 2. Mostrar de forma fija el precio estipulado
+            Console.WriteLine($"Precio por lapiz : {costoPorLapiz:F2}\n");
+
+            Console.WriteLine($"El costo es; {costoBase}\n");
+
             if (cantidad >= 1000)
             {
                 descuento = costoBase * 0.07;
+                Console.WriteLine("Descuento = 7%\n");
+                // Se usa el formato de coma decimal o punto según tu configuración regional
+                Console.WriteLine($"es ===> {descuento}");
+            }
+            else
+            {
+                Console.WriteLine("Descuento = 0%\n");
             }
 
             double totalPagar = costoBase - descuento;
+            Console.WriteLine($"\nEl total a pagar es : {totalPagar}");
 
-            Console.WriteLine($"\nEl costo es: {costoBase}");
-            if (descuento > 0)
-            {
-                Console.WriteLine($"Descuento (7%): {descuento}");
-            }
-            Console.WriteLine($"El total a pagar es : {totalPagar}");
-
-            Console.WriteLine("\nPresione cualquier tecla para volver al menú.");
             Console.ReadKey();
         }
+
 
         static void EjecutarEjercicio3()
         {
