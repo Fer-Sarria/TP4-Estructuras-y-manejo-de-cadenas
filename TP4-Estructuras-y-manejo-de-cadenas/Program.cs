@@ -46,7 +46,8 @@ namespace TP4_Estructuras_y_manejo_de_cadenas
             }
         }*/
             //EjecutarEjercicio4();
-            EjecutarEjercicio5();
+            //EjecutarEjercicio5();
+            EjecutarEjercicio6();
 
             // --- MÉTODOS DE LOS EJERCICIOS (Se definen dentro de la clase Program) ---
 
@@ -203,6 +204,45 @@ namespace TP4_Estructuras_y_manejo_de_cadenas
                 else
                 {
                     Console.WriteLine("Condición: DESAPROBADO");
+                }
+
+                Console.ReadKey();
+            }
+
+            // 6. Ingresar dos valores numéricos y mostrar su suma, resta, multiplicación y división. Si la
+            // multiplicación es mayor e igual que 20 restarle el resultado de la resta de los 2 valores,
+            // caso contrario a la multiplicación añadirle su suma, mostrar el resultado.
+            static void EjecutarEjercicio6()
+            {
+                Console.Clear();
+                Console.WriteLine("Ingrese el primer valor numérico");
+                double v1 = Convert.ToDouble(Console.ReadLine());
+
+                Console.WriteLine("Ingrese el segundo valor numérico");
+                double v2 = Convert.ToDouble(Console.ReadLine());
+
+                double suma = v1 + v2;
+                double resta = v1 - v2;
+                double multiplicacion = v1 * v2;
+
+                // Evitamos división por cero de forma segura
+                double division = v2 != 0 ? v1 / v2 : 0;
+
+                Console.WriteLine($"\nSuma: {suma}");
+                Console.WriteLine($"Resta: {resta}");
+                Console.WriteLine($"Multiplicación: {multiplicacion}");
+                Console.WriteLine($"División: {(v2 != 0 ? division.ToString("F2") : "No es posible dividir por cero")}");
+
+                double resultadoFinal;
+                if (multiplicacion >= 20)
+                {
+                    resultadoFinal = multiplicacion - resta;
+                    Console.WriteLine($"\nComo la multiplicación es >= 20, se resta la resta. Resultado: {resultadoFinal}");
+                }
+                else
+                {
+                    resultadoFinal = multiplicacion + suma;
+                    Console.WriteLine($"\nComo la multiplicación es < 20, se le añade la suma. Resultado: {resultadoFinal}");
                 }
 
                 Console.ReadKey();
