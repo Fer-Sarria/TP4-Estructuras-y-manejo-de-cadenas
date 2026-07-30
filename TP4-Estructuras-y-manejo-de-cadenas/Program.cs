@@ -45,7 +45,8 @@ namespace TP4_Estructuras_y_manejo_de_cadenas
                 }
             }
         }*/
-            EjecutarEjercicio4();
+            //EjecutarEjercicio4();
+            EjecutarEjercicio5();
 
             // --- MÉTODOS DE LOS EJERCICIOS (Se definen dentro de la clase Program) ---
 
@@ -134,7 +135,7 @@ namespace TP4_Estructuras_y_manejo_de_cadenas
                 Console.ReadKey();
             }
 
-            // 4. Ingrese su nombre y su mes de nacimiento (y día) y mostrar su signo zodiacal.
+            // 4. Ingrese su nombre y su mes de nacimiento y mostrar su signo zodiacal.
             static void EjecutarEjercicio4()
             {
                 Console.Clear();
@@ -172,6 +173,40 @@ namespace TP4_Estructuras_y_manejo_de_cadenas
                 Console.ReadKey();
             }
 
+            // 5. Realizar el siguiente ejercicio en el que se ingresa por teclado 4 notas de un alumno,
+            // mostrar nombre del alumno, el promedio de las 4 notas e indicar si está APROBADO
+            // caso contrario DESAPROBADO, teniendo en cuenta la escala de calificaciones de la
+            // escuela.
+            static void EjecutarEjercicio5()
+            {
+                Console.Clear();
+                Console.WriteLine("Ingrese el nombre del alumno");
+                string alumno = Console.ReadLine();
+
+                double suma = 0;
+                for (int i = 1; i <= 4; i++)
+                {
+                    Console.WriteLine($"Ingrese la nota {i}");
+                    suma += Convert.ToDouble(Console.ReadLine());
+                }
+
+                double promedio = suma / 4;
+
+                Console.WriteLine($"\nNombre del alumno: {alumno}");
+                Console.WriteLine($"Promedio: {promedio:F2}");
+
+                // Escala estándar de aprobación en Argentina (se aprueba con 4 o más)
+                if (promedio >= 4)
+                {
+                    Console.WriteLine("Condición: APROBADO");
+                }
+                else
+                {
+                    Console.WriteLine("Condición: DESAPROBADO");
+                }
+
+                Console.ReadKey();
+            }
 
         }
     }
