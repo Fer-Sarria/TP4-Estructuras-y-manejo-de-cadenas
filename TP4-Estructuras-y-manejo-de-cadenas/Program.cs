@@ -248,6 +248,56 @@ namespace TP4_Estructuras_y_manejo_de_cadenas
                 Console.ReadKey();
             }
 
+            // 7. Crear una aplicación que muestre el detalle de una compra de cubiertas. Si la cantidad
+            // de cubiertas compradas es menor a 12, el cliente pagará $65000 por unidad con un
+            // descuento de 8 %, y si la cantidad es mayor a 12, pagará $62000 con un descuento
+            // adicional de 12 %.Mostrar por pantalla el nombre del cliente, la cantidad de llantas
+            // compradas, el subtotal a pagar, el descuento y el importe total a pagar.
+
+            static void EjecutarEjercicio7()
+            {
+                Console.Clear();
+                Console.WriteLine("Ingrese el nombre del cliente");
+                string cliente = Console.ReadLine();
+
+                Console.WriteLine("Ingrese la cantidad de cubiertas compradas");
+                int cantidad = Convert.ToInt32(Console.ReadLine());
+
+                double precioUnitario;
+                double porcentajeDescuento;
+
+                if (cantidad < 12)
+                {
+                    precioUnitario = 65000;
+                    porcentajeDescuento = 0.08;
+                }
+                else
+                {
+                    precioUnitario = 62000;
+                    porcentajeDescuento = 0.12;
+                }
+
+                double subtotal = cantidad * precioUnitario;
+                double descuento = subtotal * porcentajeDescuento;
+                double totalPagar = subtotal - descuento;
+
+                Console.WriteLine($"\nNombre del cliente: {cliente}");
+                Console.WriteLine($"Cantidad de llantas compradas: {cantidad}");
+                Console.WriteLine($"Subtotal a pagar: ${subtotal:F2}");
+                Console.WriteLine($"Descuento aplicado ({porcentajeDescuento * 100}%): ${descuento:F2}");
+                Console.WriteLine($"Importe total a pagar: ${totalPagar:F2}");
+
+                Console.ReadKey();
+            }
+
+            // 8. Utilizando una estructura múltiple switch, crear un algoritmo que determine si el día de
+            // la semana ingresado por un usuario es un día hábil y muestre por pantalla qué día es
+            // (por ej. “El día ingresado es martes”) de lo contrario muestre por pantalla el mensaje “El
+            // día ingresado no es un día hábil”. Importante: Tome los recaudos necesarios para
+            // asegurar el funcionamiento del algoritmo ya que un usuario puede ingresar LUNES,
+            // lunes, Lunes, luneS, LuNeS, LUnES, etc.
+
+
         }
     }
 }
