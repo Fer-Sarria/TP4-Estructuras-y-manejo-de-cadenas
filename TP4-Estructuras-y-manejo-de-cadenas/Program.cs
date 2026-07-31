@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Runtime.ConstrainedExecution;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace TP4_Estructuras_y_manejo_de_cadenas
 {
@@ -47,7 +49,9 @@ namespace TP4_Estructuras_y_manejo_de_cadenas
         }*/
             //EjecutarEjercicio4();
             //EjecutarEjercicio5();
-            EjecutarEjercicio6();
+            //EjecutarEjercicio6();
+            //EjecutarEjercicio7();
+            EjecutarEjercicio8();
 
             // --- MÉTODOS DE LOS EJERCICIOS (Se definen dentro de la clase Program) ---
 
@@ -296,6 +300,7 @@ namespace TP4_Estructuras_y_manejo_de_cadenas
             // día ingresado no es un día hábil”. Importante: Tome los recaudos necesarios para
             // asegurar el funcionamiento del algoritmo ya que un usuario puede ingresar LUNES,
             // lunes, Lunes, luneS, LuNeS, LUnES, etc.
+
             static void EjecutarEjercicio8()
             {
                 Console.Clear();
@@ -328,6 +333,87 @@ namespace TP4_Estructuras_y_manejo_de_cadenas
                 Console.ReadKey();
             }
 
-        }
+            // 9. Utilizando una estructura cíclica while, realizar un algoritmo que calcule el factorial de
+            // un número entero ingresado por un usuario y presente por pantalla el mensaje “El
+            // factorial del número X ingresado es XXX” con el resultado.Importante: Realice las
+            // validaciones de entrada necesarias para asegurar que el valor ingresado por el usuario
+            // sea un número, indicando volverlo a ingresar el valor hasta que el mismo sea correcto.
+
+
+            static void EjecutarEjercicio9()
+            {
+                Console.Clear();
+                int numero = 0;
+                bool esValido = false;
+
+                // Validación de entrada para asegurar que sea un número
+                while (!esValido)
+                {
+                    Console.WriteLine("Ingrese un número entero:");
+                    string entrada = Console.ReadLine();
+
+                    if (int.TryParse(entrada, out numero) && numero >= 0)
+                    {
+                        esValido = true;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Valor incorrecto. Debe ingresar un número entero positivo.");
+                    }
+                }
+
+                long factorial = 1;
+                int i = numero;
+
+                while (i > 1)
+                {
+                    factorial *= i;
+                    i--;
+                }
+
+                Console.WriteLine($"El factorial del número {numero} ingresado es {factorial}");
+                Console.ReadKey();
+            }
+        
+    
+
+    // 10. Utilizando una estructura cíclica for, realice un algoritmo que muestre los primeros 10
+    // números pares por pantalla. Asegúrese de que el mensaje mostrado sea “Los primeros
+    // 10 números pares son: 2, 4, 6, 8, 10, 12, 14, 16, 18, 20”.
+
+    // 11. Utilizando una estructura múltiple (if anidada), realice un algoritmo que permita
+    // clasificar un triángulo según sus lados, los cuales deberá ingresar un usuario.Para ello
+    // debemos verificar si un triángulo es equilátero(3 lados iguales), isósceles (2 lados
+    // iguales y 1 diferente) o escaleno(3 lados diferentes). Importante: Asegúrese de que el
+    // usuario ingrese valores numéricos enteros.
+
+    // 12. Realizar un algoritmo que concatena dos palabras ingresadas por un usuario utilizando
+    //string.Concat.
+
+    // 13. Realizar un algoritmo que permita obtener el substring utilizando string.Substring de las
+    // primeras 5 letras de una palabra ingresada por un usuario. Importante: Realizar las
+    // validaciones necesarias para asegurar el correcto funcionamiento del algoritmo.
+
+    // 14. Realizar un algoritmo utilizando la función string.Contains() que permita determinar si
+    // una cadena ingresada por el usuario contiene un carácter también ingresado por el
+    // usuario.Presentar por pantalla el resultado.
+
+    // 15. Utilizando string.Compare realizar un algoritmo que compare dos palabras ingresadas
+    // por el usuario y determine cuál es la mayor de las dos y si las dos son iguales.
+
+    // 16. Realizar un algoritmo utilizando la función IndexOf() que permita encontrar la posición
+    // de un carácter ingresado por un usuario en una cadena también ingresada por el
+    // usuario.Mostrar por pantalla la posición en la que se encuentra la letra utilizando el
+    // siguiente mensaje “La letra ‘c’ se encuentra en la posición 6 de la cadena 'Federico'." y
+    // sino indicar que la palabra no contiene la letra con el siguiente mensaje “La cadena
+    // 'Federico' no contiene el carácter 'a'.”
+
+    // 17. Realizar un algoritmo que permita reemplazar todas las letras ‘a’ de una frase ingresada
+    // por el usuario por el carácter ‘4’ y reemplazar todas las letras ‘e’ por el carácter ‘3’,
+    // utilizando la función Replace(). Por ejemplo, la frase ingresada “Hoy puede ser un gran
+    // dia” debe resultar “Hoy pu3d3 s3r un gr4n di4”.
+
+
+}
     }
 }
