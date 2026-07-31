@@ -447,6 +447,21 @@ namespace TP4_Estructuras_y_manejo_de_cadenas
 
             // 12. Realizar un algoritmo que concatena dos palabras ingresadas por un usuario utilizando
             //string.Concat.
+            static void EjecutarEjercicio12()
+            {
+                Console.Clear();
+                Console.WriteLine("Ingrese la primera palabra:");
+                string palabra1 = Console.ReadLine();
+
+                Console.WriteLine("Ingrese la segunda palabra:");
+                string palabra2 = Console.ReadLine();
+
+                // Uso explícito de string.Concat
+                string resultado = string.Concat(palabra1, palabra2);
+
+                Console.WriteLine($"Resultado de la concatenación: {resultado}");
+                Console.ReadKey();
+            }
 
             // 13. Realizar un algoritmo que permita obtener el substring utilizando string.Substring de las
             // primeras 5 letras de una palabra ingresada por un usuario. Importante: Realizar las
