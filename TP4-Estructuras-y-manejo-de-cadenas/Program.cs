@@ -466,6 +466,23 @@ namespace TP4_Estructuras_y_manejo_de_cadenas
             // 13. Realizar un algoritmo que permita obtener el substring utilizando string.Substring de las
             // primeras 5 letras de una palabra ingresada por un usuario. Importante: Realizar las
             // validaciones necesarias para asegurar el correcto funcionamiento del algoritmo.
+            static void EjecutarEjercicio13()
+            {
+                Console.Clear();
+                string palabra = "";
+
+                while (palabra.Length < 5)
+                {
+                    Console.WriteLine("Ingrese una palabra (debe tener mínimo 5 letras):");
+                    palabra = Console.ReadLine();
+                }
+
+                // Obtiene las primeras 5 letras
+                string subcadena = palabra.Substring(0, 5);
+
+                Console.WriteLine($"Las primeras 5 letras son: {subcadena}");
+                Console.ReadKey();
+            }
 
             // 14. Realizar un algoritmo utilizando la función string.Contains() que permita determinar si
             // una cadena ingresada por el usuario contiene un carácter también ingresado por el
