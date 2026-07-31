@@ -51,7 +51,10 @@ namespace TP4_Estructuras_y_manejo_de_cadenas
             //EjecutarEjercicio5();
             //EjecutarEjercicio6();
             //EjecutarEjercicio7();
-            EjecutarEjercicio8();
+            //EjecutarEjercicio8();
+            //EjecutarEjercicio9();
+            //EjecutarEjercicio10();
+            EjecutarEjercicio11();
 
             // --- MÉTODOS DE LOS EJERCICIOS (Se definen dentro de la clase Program) ---
 
