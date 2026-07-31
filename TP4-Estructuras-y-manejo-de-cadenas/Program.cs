@@ -488,6 +488,27 @@ namespace TP4_Estructuras_y_manejo_de_cadenas
             // una cadena ingresada por el usuario contiene un carácter también ingresado por el
             // usuario.Presentar por pantalla el resultado.
 
+            static void EjecutarEjercicio14()
+            {
+                Console.Clear();
+                Console.WriteLine("Ingrese una cadena de texto:");
+                string cadena = Console.ReadLine();
+
+                Console.WriteLine("Ingrese el carácter a buscar:");
+                string caracter = Console.ReadLine();
+
+                // Verificación lógica mediante Contains
+                if (cadena.Contains(caracter))
+                {
+                    Console.WriteLine("La cadena contiene el carácter ingresado.");
+                }
+                else
+                {
+                    Console.WriteLine("La cadena NO contiene el carácter ingresado.");
+                }
+                Console.ReadKey();
+            }
+
             // 15. Utilizando string.Compare realizar un algoritmo que compare dos palabras ingresadas
             // por el usuario y determine cuál es la mayor de las dos y si las dos son iguales.
 
