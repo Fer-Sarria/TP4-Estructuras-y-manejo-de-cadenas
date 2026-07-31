@@ -511,6 +511,31 @@ namespace TP4_Estructuras_y_manejo_de_cadenas
 
             // 15. Utilizando string.Compare realizar un algoritmo que compare dos palabras ingresadas
             // por el usuario y determine cuál es la mayor de las dos y si las dos son iguales.
+            static void EjecutarEjercicio15()
+            {
+                Console.Clear();
+                Console.WriteLine("Ingrese la primera palabra:");
+                string palabra1 = Console.ReadLine();
+
+                Console.WriteLine("Ingrese la segunda palabra:");
+                string palabra2 = Console.ReadLine();
+
+                int control = string.Compare(palabra1, palabra2);
+
+                if (control == 0)
+                {
+                    Console.WriteLine("Las dos palabras son iguales.");
+                }
+                else if (control > 0)
+                {
+                    Console.WriteLine($"La palabra '{palabra1}' es mayor alfabéticamente.");
+                }
+                else
+                {
+                    Console.WriteLine($"La palabra '{palabra2}' es mayor alfabéticamente.");
+                }
+                Console.ReadKey();
+            }
 
             // 16. Realizar un algoritmo utilizando la función IndexOf() que permita encontrar la posición
             // de un carácter ingresado por un usuario en una cadena también ingresada por el
