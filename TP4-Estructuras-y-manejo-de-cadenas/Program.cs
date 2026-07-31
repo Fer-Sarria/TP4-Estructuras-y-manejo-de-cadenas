@@ -374,46 +374,101 @@ namespace TP4_Estructuras_y_manejo_de_cadenas
                 Console.WriteLine($"El factorial del número {numero} ingresado es {factorial}");
                 Console.ReadKey();
             }
-        
-    
-
-    // 10. Utilizando una estructura cíclica for, realice un algoritmo que muestre los primeros 10
-    // números pares por pantalla. Asegúrese de que el mensaje mostrado sea “Los primeros
-    // 10 números pares son: 2, 4, 6, 8, 10, 12, 14, 16, 18, 20”.
-
-    // 11. Utilizando una estructura múltiple (if anidada), realice un algoritmo que permita
-    // clasificar un triángulo según sus lados, los cuales deberá ingresar un usuario.Para ello
-    // debemos verificar si un triángulo es equilátero(3 lados iguales), isósceles (2 lados
-    // iguales y 1 diferente) o escaleno(3 lados diferentes). Importante: Asegúrese de que el
-    // usuario ingrese valores numéricos enteros.
-
-    // 12. Realizar un algoritmo que concatena dos palabras ingresadas por un usuario utilizando
-    //string.Concat.
-
-    // 13. Realizar un algoritmo que permita obtener el substring utilizando string.Substring de las
-    // primeras 5 letras de una palabra ingresada por un usuario. Importante: Realizar las
-    // validaciones necesarias para asegurar el correcto funcionamiento del algoritmo.
-
-    // 14. Realizar un algoritmo utilizando la función string.Contains() que permita determinar si
-    // una cadena ingresada por el usuario contiene un carácter también ingresado por el
-    // usuario.Presentar por pantalla el resultado.
-
-    // 15. Utilizando string.Compare realizar un algoritmo que compare dos palabras ingresadas
-    // por el usuario y determine cuál es la mayor de las dos y si las dos son iguales.
-
-    // 16. Realizar un algoritmo utilizando la función IndexOf() que permita encontrar la posición
-    // de un carácter ingresado por un usuario en una cadena también ingresada por el
-    // usuario.Mostrar por pantalla la posición en la que se encuentra la letra utilizando el
-    // siguiente mensaje “La letra ‘c’ se encuentra en la posición 6 de la cadena 'Federico'." y
-    // sino indicar que la palabra no contiene la letra con el siguiente mensaje “La cadena
-    // 'Federico' no contiene el carácter 'a'.”
-
-    // 17. Realizar un algoritmo que permita reemplazar todas las letras ‘a’ de una frase ingresada
-    // por el usuario por el carácter ‘4’ y reemplazar todas las letras ‘e’ por el carácter ‘3’,
-    // utilizando la función Replace(). Por ejemplo, la frase ingresada “Hoy puede ser un gran
-    // dia” debe resultar “Hoy pu3d3 s3r un gr4n di4”.
 
 
-}
+
+            // 10. Utilizando una estructura cíclica for, realice un algoritmo que muestre los primeros 10
+            // números pares por pantalla. Asegúrese de que el mensaje mostrado sea “Los primeros
+            // 10 números pares son: 2, 4, 6, 8, 10, 12, 14, 16, 18, 20”.
+            static void EjecutarEjercicio10()
+            {
+                Console.Clear();
+                string resultado = "";
+
+                for (int i = 1; i <= 10; i++)
+                {
+                    int par = i * 2;
+                    resultado += par.ToString();
+
+                    if (i < 10)
+                    {
+                        resultado += ", ";
+                    }
+                }
+
+                // Mensaje mostrado con la estructura exacta exigida en el PDF
+                Console.WriteLine($"Los primeros 10 números pares son: {resultado}");
+                Console.ReadKey();
+            }
+
+            // 11. Utilizando una estructura múltiple (if anidada), realice un algoritmo que permita
+            // clasificar un triángulo según sus lados, los cuales deberá ingresar un usuario.Para ello
+            // debemos verificar si un triángulo es equilátero(3 lados iguales), isósceles (2 lados
+            // iguales y 1 diferente) o escaleno(3 lados diferentes). Importante: Asegúrese de que el
+            // usuario ingrese valores numéricos enteros.
+            static void EjecutarEjercicio11()
+            {
+                Console.Clear();
+                int lado1, lado2, lado3;
+
+                Console.WriteLine("Ingrese el primer lado del triángulo (entero):");
+                while (!int.TryParse(Console.ReadLine(), out lado1))
+                    Console.WriteLine("Por favor, ingrese un número entero válido.");
+
+                Console.WriteLine("Ingrese el segundo lado del triángulo (entero):");
+                while (!int.TryParse(Console.ReadLine(), out lado2))
+                    Console.WriteLine("Por favor, ingrese un número entero válido.");
+
+                Console.WriteLine("Ingrese el tercer lado del triángulo (entero):");
+                while (!int.TryParse(Console.ReadLine(), out lado3))
+                    Console.WriteLine("Por favor, ingrese un número entero válido.");
+
+                // Estructura múltiple if anidada
+                if (lado1 == lado2 && lado2 == lado3)
+                {
+                    Console.WriteLine("El triángulo es Equilátero.");
+                }
+                else
+                {
+                    if (lado1 == lado2 || lado1 == lado3 || lado2 == lado3)
+                    {
+                        Console.WriteLine("El triángulo es Isósceles.");
+                    }
+                    else
+                    {
+                        Console.WriteLine("El triángulo es Escaleno.");
+                    }
+                }
+                Console.ReadKey();
+            }
+
+            // 12. Realizar un algoritmo que concatena dos palabras ingresadas por un usuario utilizando
+            //string.Concat.
+
+            // 13. Realizar un algoritmo que permita obtener el substring utilizando string.Substring de las
+            // primeras 5 letras de una palabra ingresada por un usuario. Importante: Realizar las
+            // validaciones necesarias para asegurar el correcto funcionamiento del algoritmo.
+
+            // 14. Realizar un algoritmo utilizando la función string.Contains() que permita determinar si
+            // una cadena ingresada por el usuario contiene un carácter también ingresado por el
+            // usuario.Presentar por pantalla el resultado.
+
+            // 15. Utilizando string.Compare realizar un algoritmo que compare dos palabras ingresadas
+            // por el usuario y determine cuál es la mayor de las dos y si las dos son iguales.
+
+            // 16. Realizar un algoritmo utilizando la función IndexOf() que permita encontrar la posición
+            // de un carácter ingresado por un usuario en una cadena también ingresada por el
+            // usuario.Mostrar por pantalla la posición en la que se encuentra la letra utilizando el
+            // siguiente mensaje “La letra ‘c’ se encuentra en la posición 6 de la cadena 'Federico'." y
+            // sino indicar que la palabra no contiene la letra con el siguiente mensaje “La cadena
+            // 'Federico' no contiene el carácter 'a'.”
+
+            // 17. Realizar un algoritmo que permita reemplazar todas las letras ‘a’ de una frase ingresada
+            // por el usuario por el carácter ‘4’ y reemplazar todas las letras ‘e’ por el carácter ‘3’,
+            // utilizando la función Replace(). Por ejemplo, la frase ingresada “Hoy puede ser un gran
+            // dia” debe resultar “Hoy pu3d3 s3r un gr4n di4”.
+
+
+        }
     }
 }
