@@ -54,7 +54,13 @@ namespace TP4_Estructuras_y_manejo_de_cadenas
             //EjecutarEjercicio8();
             //EjecutarEjercicio9();
             //EjecutarEjercicio10();
-            EjecutarEjercicio11();
+            //EjecutarEjercicio11();
+            //EjecutarEjercicio12();
+            //EjecutarEjercicio13();
+            //EjecutarEjercicio14();
+            //EjecutarEjercicio15();
+            //EjecutarEjercicio16();
+            EjecutarEjercicio17();
 
             // --- MÉTODOS DE LOS EJERCICIOS (Se definen dentro de la clase Program) ---
 
@@ -543,12 +549,47 @@ namespace TP4_Estructuras_y_manejo_de_cadenas
             // siguiente mensaje “La letra ‘c’ se encuentra en la posición 6 de la cadena 'Federico'." y
             // sino indicar que la palabra no contiene la letra con el siguiente mensaje “La cadena
             // 'Federico' no contiene el carácter 'a'.”
+            static void EjecutarEjercicio16()
+            {
+                Console.Clear();
+                Console.WriteLine("Ingrese una cadena de texto:");
+                string cadena = Console.ReadLine();
+
+                Console.WriteLine("Ingrese el carácter a buscar:");
+                string entrada = Console.ReadLine();
+                char letra = entrada.Length > 0 ? entrada[0] : ' ';
+
+                int posicion = cadena.IndexOf(letra);
+
+                // Estructura de mensajes requerida textualmente por el profesor
+                if (posicion != -1)
+                {
+                    Console.WriteLine($"La letra '{letra}' se encuentra en la posición {posicion} de la cadena '{cadena}'.");
+                }
+                else
+                {
+                    Console.WriteLine($"La cadena '{cadena}' no contiene el carácter '{letra}'.");
+                }
+                Console.ReadKey();
+            }
 
             // 17. Realizar un algoritmo que permita reemplazar todas las letras ‘a’ de una frase ingresada
             // por el usuario por el carácter ‘4’ y reemplazar todas las letras ‘e’ por el carácter ‘3’,
             // utilizando la función Replace(). Por ejemplo, la frase ingresada “Hoy puede ser un gran
             // dia” debe resultar “Hoy pu3d3 s3r un gr4n di4”.
+            static void EjecutarEjercicio17()
+            {
+                Console.Clear();
+                Console.WriteLine("Ingrese una frase:");
+                string frase = Console.ReadLine();
 
+                // Reemplazo en cadena sucesivo de minúsculas y mayúsculas
+                string modificada = frase.Replace("a", "4").Replace("e", "3")
+                                         .Replace("A", "4").Replace("E", "3");
+
+                Console.WriteLine(modificada);
+                Console.ReadKey();
+            }
 
         }
     }
